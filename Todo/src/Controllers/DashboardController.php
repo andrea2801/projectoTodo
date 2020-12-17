@@ -49,15 +49,8 @@ final class DashboardController extends Controller
     
     public function edit()
     {
-        $ndesc = filter_input(INPUT_POST, 'newdesc', FILTER_SANITIZE_STRING);
-        $ndate = filter_input(INPUT_POST, 'newdate', FILTER_SANITIZE_STRING);
-        $nidTask = filter_input(INPUT_POST, 'nidTask', FILTER_SANITIZE_STRING);
-
-        $user = $this->session->get('user');
-        $data = ['description' => $ndesc, 'due_date' => $ndate];
-        $conditions = ['id', $nidTask];
-        $result = $this->getDB()->update('Task', $data, $conditions);
-        $this->render(['title' => 'Todo', 'user' => $user, 'data' => $result], 'dashboard');
+        $result = $this->getDB()->update('Task', $data, $conditions);  
+        $this->dashboard();
     }
   
 
