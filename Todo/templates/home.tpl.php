@@ -4,7 +4,7 @@
 include 'header.tpl.php';
 ?>
 <main id="home" >
-<p class="homes">Empieza a gestionar tus tareas<p><a href="/dashboard">Editar</a>
+<p class="homes">Empieza a gestionar tus tareas<p><a href="<?=BASE?>dashboard">Editar</a>
 <div id="scroll">
 <?php
    
